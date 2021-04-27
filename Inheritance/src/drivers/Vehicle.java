@@ -1,4 +1,4 @@
-package drevers2_instanceof;
+package drivers;
 
 public class Vehicle {
 	public void run() {

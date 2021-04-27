@@ -1,4 +1,4 @@
-package drivers2;
+package drevers2_instanceof;
 
 public class Truck extends Vehicle {
 	public void run() {

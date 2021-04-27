@@ -1,10 +1,10 @@
 package polymorphism;
 
 public class Book {
-	String name;		// 책명
-	String category;	// 장르
-	String author;		// 저자
-	double price;		// 책의 가격($)
+	protected String name;		// 책명
+	protected String category;	// 장르
+	protected String author;	// 저자
+	protected double price;		// 책의 가격($)
 
 	public Book() {}
 	
@@ -36,7 +36,12 @@ public class Book {
 	public double getPrice() {
 		return price;
 	}
+	
 	public void setPrice(double price) {
+		if(price < 0.0 || price > 100.0) {
+			return;
+		}
+		
 		this.price = price;
 	}
 	

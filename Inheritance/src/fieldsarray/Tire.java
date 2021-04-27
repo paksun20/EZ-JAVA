@@ -1,4 +1,4 @@
-package fields;
+package fieldsarray;
 
 public class Tire {
 	// ÇÊµå

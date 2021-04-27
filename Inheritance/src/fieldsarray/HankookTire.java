@@ -1,4 +1,4 @@
-package fields;
+package fieldsarray;
 
 public class HankookTire extends Tire {
 	public HankookTire(String location, int maxRotation) {

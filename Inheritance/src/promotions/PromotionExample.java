@@ -1,16 +1,16 @@
 package promotions;
 
 class A {}
-class B extends A{}
-class C extends A{}
-class D extends B{}
-class E extends C{}
+
+class B extends A {}
+class C extends A {}
+
+class D extends B {}
+class E extends C {}
 
 
 public class PromotionExample {
-
 	public static void main(String[] args) {
-		
 		System.out.println("Promotion Example");
 		
 		B b = new B();
@@ -23,17 +23,18 @@ public class PromotionExample {
 		A a3 = d;
 		A a4 = e;
 		
-/*
-		B b1 = d;
-		C c1 = e;
-		
-		B b2 = e;
-		C c2 = d;
+		A b1 = d;
+		A c1 = e;
+
+		// Type mismatch: cannot convert
+		/*
+		B b2 = c;
+		C c2 = b;
+		B b3 = e;
+		C c3 = d;
 		D d2 = e;
-		E e2 = b;
-*/
-		 
-		
+		E e2 = d;
+		*/
 	}
 
 }

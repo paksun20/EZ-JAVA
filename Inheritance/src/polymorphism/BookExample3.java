@@ -7,17 +7,15 @@ package polymorphism;
 public class BookExample3 {
 
 	public static void main(String[] args) {
-		
 		Book book = new Book("홍길동전", "고전", "허균", 0.0); 
 		
-
-		Book ebook = new EBook("진달래 꽃", 
+		EBook ebook = new EBook("진달래 꽃", 
 				"시집", 
 				"김소월", 
 				20.5, 
 				"전자책");
 		
-		Book novel = new Novel("태백산맥", 
+		Novel novel = new Novel("태백산맥", 
 				"소설", 
 				"조정래", 
 				20.5, 
@@ -26,21 +24,20 @@ public class BookExample3 {
 		printBookInfo(book);
 		printEBookInfo(ebook);
 		printNovelInfo(novel);
-		
 	}
 	
-		
-	   static void printBookInfo(Book book) {
-		    System.out.println("[도서정보]");
-	    	System.out.println(book);
-	   }
-	    	   static void printEBookInfo(Book ebook) {
-	   		    System.out.println("[전자책정보]");
-	   	    	System.out.println(ebook);
-	   }    	
-	   	     static void printNovelInfo(Book novel) {
-	 		    System.out.println("[소설책정보]");
-	 	    	System.out.println(novel);
+	static void printBookInfo(Book book) {
+		System.out.println("[도서정보]");
+		System.out.println(book);
 	}
 
+	static void printEBookInfo(EBook book) {
+		System.out.println("[전자책정보]");
+		System.out.println(book);
+	}
+
+	static void printNovelInfo(Novel book) {
+		System.out.println("[소설책정보]");
+		System.out.println(book);
+	}
 }
