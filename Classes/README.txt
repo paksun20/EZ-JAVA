@@ -1,5 +1,7 @@
 클래스(class)
 
+객체를 생성하기 위한 템플릿 역할을 한다.
+
 OOP(Object Oriented Programming) 객체지향 프로그래밍
 
 Object(객체)
