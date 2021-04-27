@@ -23,8 +23,8 @@ public class PromotionExample {
 		A a3 = d;
 		A a4 = e;
 		
-		A b1 = d;
-		A c1 = e;
+		B b1 = d;
+		C c1 = e;
 
 		// Type mismatch: cannot convert
 		/*
