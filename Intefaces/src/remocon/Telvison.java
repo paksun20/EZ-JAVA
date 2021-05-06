@@ -1,6 +1,6 @@
 package remocon;
 
-public class Telvison implements RemoteControl {
+public abstract class Telvison implements RemoteControl {
 
 	private int volumn;
 	

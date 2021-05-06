@@ -6,7 +6,7 @@ public class RomoteControlExample {
 		RemoteControl tv = new Telvison();
 						
 		tv.turnOn();
-		tv.setVolum(5);
+		tv.setVolumn(5);
 		tv.turnOff();
 	}
 
