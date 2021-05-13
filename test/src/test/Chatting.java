@@ -4,6 +4,7 @@ public class Chatting {
 	void startChat(String chatId) {
 
 		String nickName = chatId;
+		
 		Chat chat = new Chat() {
 			@Override
 			public void start() {
