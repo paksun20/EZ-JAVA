@@ -1,6 +1,6 @@
 package section03;
 
-public class ProductExample2 {
+public class productExample2 {
 
 	public static void main(String[] args) {
 		Product<Tv, String> ptv = new Product<>();
