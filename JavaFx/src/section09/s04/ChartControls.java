@@ -1,10 +1,4 @@
-/*
- * ºä ÄÁÆ®·Ñ
- * - ListView
- * - TableView
- * - ImageView
- */
-package section07.s03;
+package section09.s04;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,14 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class ViewControls extends Application {
-
+public class ChartControls extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = (Parent)FXMLLoader.load(getClass().getResource("root.fxml"));
 		Scene scene = new Scene(root);
 		
-		primaryStage.setTitle("AppMain");
+		primaryStage.setTitle("ChartControls");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
@@ -28,3 +21,4 @@ public class ViewControls extends Application {
 		launch(args);
 	}
 }
+
