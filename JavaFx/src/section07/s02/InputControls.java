@@ -1,8 +1,14 @@
 /*
- * AnchorPane Layout
- * - 좌표를 지정하여 컨트롤을 배치하는 컨테이너
+ * 입력 컨트롤
+ * - TextField
+ * - TextArea
+ * - PasswordField
+ * - ComboBox
+ * - DatePicker
+ * - ColorPicker
+ * - HTMLEditor
  */
-package section04.s01;
+package section07.s02;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AnchorPaneLayout extends Application {
+public class InputControls extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
@@ -21,7 +27,7 @@ public class AnchorPaneLayout extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("root.fxml"));
 		Scene scene = new Scene(root);
 		
-		primaryStage.setTitle("AnchorPane Layout");
+		primaryStage.setTitle("Input Controls Demo");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}

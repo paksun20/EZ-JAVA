@@ -24,13 +24,11 @@
 	</center>
 	
 	<bottom>
-		<BorderPane>
-			<center>
+		<HBox>
+			<children>
 				<TextField/> 
-			</center>
-			<right>
 				<Button text="적용"/>
-			</right>
-		</BorderPane>
+			</children>
+		</HBox>
 	</bottom>
 </BorderPane>
