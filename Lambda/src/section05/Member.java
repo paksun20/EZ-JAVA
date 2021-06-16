@@ -10,16 +10,16 @@ public class Member {
 		this.id = id;
 		this.address = address;
 	}
-
-	public String getName() {
-		return name; 
-		}
 	
-	public String getId() { 
-		return id; 
-		}
+	public String getName() {
+		return this.name;
+	}
+	
+	public String getId() {
+		return this.id;
+	}
 	
 	public Address getAddress() {
-		return address; 
-		}
+		return this.address;
+	}
 }

@@ -12,13 +12,13 @@ public class Student {
 		this.sex = sex;
 		this.score = score;
 	}
+	
 	public Student(String name, int english, int math) {
-		super();
 		this.name = name;
 		this.english = english;
 		this.math = math;
 	}
-
+	
 	public String getSex() {
 		return this.sex;
 	}
@@ -26,7 +26,7 @@ public class Student {
 	public int getScore() {
 		return this.score;
 	}
-	
+
 	public String getName() {
 		return name;
 	}

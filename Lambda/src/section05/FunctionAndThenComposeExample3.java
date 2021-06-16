@@ -1,27 +1,34 @@
+/*
+ * Function의 순차적 연결
+ * - Function<>.compose()를 시뮬레이션
+ */
 package section05;
 
 import java.util.function.Function;
 
 public class FunctionAndThenComposeExample3 {
+
 	public static void main(String[] args) {
 		Function<Member, Address> functionA;
 		Function<Address, String> functionB;
 		Function<Member, String> functionAB;
 		String city;
 		
-		functionA = (m) -> m.getAddress();
-		functionB = (a) -> a.getCity();
+		functionA = (Member member) -> {
+			System.out.printf("FunctionA:(%s)(%s)\n", 
+					member.getAddress().getCountry(),
+					member.getAddress().getCity());
+			return member.getAddress();
+		};
 		
-		functionAB = functionA.andThen(functionB);
-		city = functionAB.apply(
-			new Member("홍길동", "hong", new Address("한국", "서울"))
-		);
-		System.out.println("거주 도시: " + city);
+		functionB = (Address addr) -> {
+			System.out.printf("FunctionB:(%s)(%s)\n", addr.getCountry(), addr.getCity());
+			return addr.getCity() + "[시]";
+		};
 		
 		functionAB = functionB.compose(functionA);
-		city = functionAB.apply(
-			new Member("홍길동", "hong", new Address("한국", "서울"))
-		);
-		System.out.println("거주 도시: " + city);
+		city = functionAB.apply(new Member("홍길동", "HGD", new Address("조선", "한양")));
+		System.out.println("거주도시:" + city);
 	}
+
 }

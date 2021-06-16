@@ -1,10 +1,10 @@
 package section07.s03;
 
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -15,70 +15,71 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 
 
 public class RootController implements Initializable {
 	@FXML private ListView<String> listView;
-	@FXML private TableView<Phone> tableView;	
+	@FXML private TableView<Phone> tableView;
 	@FXML private ImageView imageView;
-	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		listView.setItems(FXCollections.observableArrayList(
-			"°¶·°½ÃS1", "°¶·°½ÃS2", "°¶·°½ÃS3", "°¶·°½ÃS4", "°¶·°½ÃS5", "°¶·°½ÃS6", "°¶·°½ÃS7"
+				"Galaxy-S1", "Galaxy-S2", "Galaxy-S3", "Galaxy-S4", "Galaxy-S5", "Galaxy-S6", "Galaxy-S7"
 		));
+		
 		listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+				System.out.println("listView: changed=" + newValue.intValue());
 				tableView.getSelectionModel().select(newValue.intValue());
 				tableView.scrollTo(newValue.intValue());
 			}
 		});
 		
-		ObservableList<Phone> phoneList = FXCollections.observableArrayList(
-		    new Phone("°¶·°½ÃS1", "phone01.png"),
-		    new Phone("°¶·°½ÃS2", "phone02.png"),
-		    new Phone("°¶·°½ÃS3", "phone03.png"),
-		    new Phone("°¶·°½ÃS4", "phone04.png"),
-		    new Phone("°¶·°½ÃS5", "phone05.png"),
-		    new Phone("°¶·°½ÃS6", "phone06.png"),
-		    new Phone("°¶·°½ÃS7", "phone07.png")
+		ObservableList phoneList = FXCollections.observableArrayList(
+			new Phone("Galaxy-S1", "galaxy01.jpg"),
+			new Phone("Galaxy-S2", "galaxy02.jpg"),
+			new Phone("Galaxy-S3", "galaxy03.jpg"),
+			new Phone("Galaxy-S4", "galaxy04.jpg"),
+			new Phone("Galaxy-S5", "galaxy05.jpg"),
+			new Phone("Galaxy-S6", "galaxy06.jpg"),
+			new Phone("Galaxy-S7", "galaxy07.jpg")
 		);
 		
-		TableColumn tcSmartPhone = tableView.getColumns().get(0);
-		tcSmartPhone.setCellValueFactory(new PropertyValueFactory("smartPhone")
-		);
-		tcSmartPhone.setStyle("-fx-alignment: CENTER;");
-		
-		TableColumn tcImage = tableView.getColumns().get(1);
-		tcImage.setCellValueFactory(new PropertyValueFactory("image")
-	    );
-		tcImage.setStyle("-fx-alignment: CENTER;");
-		
+		TableColumn<Phone, ?> tcSmartPhone = tableView.getColumns().get(0);
+		tcSmartPhone.setCellValueFactory(new PropertyValueFactory("smartPhone"));
+		tcSmartPhone.setStyle("-fx-alignment: CENTER");
+	
+		TableColumn<Phone, ?> tcImage = tableView.getColumns().get(1);
+		tcImage.setCellValueFactory(new PropertyValueFactory("smartImage"));
+		tcImage.setStyle("-fx-alignment: CENTER");
+
 		tableView.setItems(phoneList);
-		
 		tableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Phone>() {
 			@Override
 			public void changed(ObservableValue<? extends Phone> observable, Phone oldValue, Phone newValue) {
-				if(newValue!=null) {
-					imageView.setImage(new Image(getClass().getResource("images/" + newValue.getImage()).toString()));
+				if(newValue != null) {
+					imageView.setImage(new Image(getClass().getResource("images/" + newValue.getSmartImage()).toString()));
 				}
 			}
 		});
 	}
 	
 	public void handleBtnOkAction(ActionEvent e) {
+		System.out.println("[handleBtnOkAction]");
 		String item = listView.getSelectionModel().getSelectedItem();
-		System.out.println("ListView ½º¸¶Æ®Æù: " + item);
-		
 		Phone phone = tableView.getSelectionModel().getSelectedItem();
-		System.out.println("TableView ½º¸¶Æ®Æù: " + phone.getSmartPhone());
-		System.out.println("TableView ÀÌ¹ÌÁö: " + phone.getImage());
+		
+		System.out.println("[ListView] SmartPhone: " + item);
+		System.out.println("[TableView] SmartPhone: " + phone.getSmartPhone());
+		System.out.println("[TableView] SmartImage: " + phone.getSmartImage());
 	}
 	
 	public void handleBtnCancelAction(ActionEvent e) {

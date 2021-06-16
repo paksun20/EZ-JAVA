@@ -1,31 +1,30 @@
 package section07.s03;
 
-
 import javafx.beans.property.SimpleStringProperty;
 
 public class Phone {
 	private SimpleStringProperty smartPhone;
-	private SimpleStringProperty image;
-	
-	public Phone() {
-		this.smartPhone = new SimpleStringProperty();
-		this.image = new SimpleStringProperty();
-	}
+	private SimpleStringProperty smartImage;
+
 	public Phone(String smartPhone, String image) {
 		this.smartPhone = new SimpleStringProperty(smartPhone);
-		this.image = new SimpleStringProperty(image);
+		this.smartImage = new SimpleStringProperty(image);
 	}
 	
 	public String getSmartPhone() {
+		System.out.println("Phone: getSmartPhone...");
 		return smartPhone.get();
 	}
+	
 	public void setSmartPhone(String smartPhone) {
-		this.smartPhone.set(smartPhone);;
+		this.smartPhone.set(smartPhone);
 	}
-	public String getImage() {
-		return image.get();
+	
+	public String getSmartImage() {
+		return smartImage.get();
 	}
-	public void setImage(String image) {
-		this.image.set(image);;
+	
+	public void setSmartImage(String image) {
+		this.smartImage.set(image);
 	}
 }

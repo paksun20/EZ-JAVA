@@ -5,23 +5,24 @@ public class Member {
 	private String id;
 	
 	public Member() {
-		System.out.println("Member() 角青");
+		System.out.println("Member() 按眉 积己");
 	}
-	public Member(String id) { 
-		System.out.println("Member(String id) 角青");
-		this.id = id; 
-	}
-	public Member(String name, String id) {
-		System.out.println("Member(String name, String id)");
-		this.name = name;
+	
+	public Member(String id) {
+		System.out.println("Member(String id) 按眉 积己");
 		this.id = id;
 	}
 	
+	public Member(String name, String id) {
+		System.out.println("Member(String name, String id) 按眉 积己");
+		this.name = name;
+		this.id = id;
+	}
+
 	public String getName() {
-		return this.name; 
-		}
-	
+		return this.name;
+	}
 	public String getId() {
-		return this.id; 
-		}
+		return this.id;
+	}
 }
