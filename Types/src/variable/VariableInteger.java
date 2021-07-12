@@ -2,6 +2,8 @@
  * 정수(int)
  * 정수: zero(0), 음수, 양수
  */
+package variable;
+
 public class VariableInteger {
 
 	public static void main(String[] args) {

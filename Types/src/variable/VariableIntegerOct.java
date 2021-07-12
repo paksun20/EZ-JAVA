@@ -2,6 +2,10 @@
  * 변수(Variable)
  * 8진수값은 정수값 앞에 0를 붙인다. (0부터 7까지의 값)
  */
+
+package variable;
+
+
 public class VariableIntegerOct {
 
 	public static void main(String[] args) {

@@ -1,3 +1,4 @@
+package variable;
 /*
  * 문자(char)
  * 작은따옴표(')로 양쪽을 묶는다.

@@ -2,6 +2,9 @@
  * 변수(Variable)
  * 16진수값은 정수값 앞에 0x를 붙인다. (0xa)
  */
+
+package variable;
+
 public class VariableIntegerHexa {
 
 	public static void main(String[] args) {

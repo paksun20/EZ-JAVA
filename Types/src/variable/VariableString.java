@@ -3,6 +3,8 @@
  * 문자들의 집합
  * 큰따옴표(")로 양쪽을 묶어서 기술한다.
  */
+package variable;
+
 public class VariableString {
 
 	public static void main(String[] args) {

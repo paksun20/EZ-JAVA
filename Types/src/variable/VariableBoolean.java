@@ -4,6 +4,9 @@
  * 참 : 0이 아닌값(음수, 양수)
  * 거짓 : 0의 값
  */
+
+package variable;
+
 public class VariableBoolean {
 
 	public static void main(String[] args) {
